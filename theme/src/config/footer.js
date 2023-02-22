@@ -1,15 +1,15 @@
 export const footerSocials = [
   {
-    name: 'Twitter',
-    url: 'https://twitter.com/littlesticksdev',
-    icon: "mdi:twitter",
+    name: 'Facebook',
+    url: 'https://facebook.com/TMCRavels',
+    icon: "mdi:facebook",
   },
   {
     name: 'Youtube',
-    url: 'https://youtube.com/c/LittleSticks',
+    url: 'https://www.youtube.com/@tmcravels/',
     icon: "mdi:youtube",
   },
-  {
+/*  {
     name: 'Github',
     url: 'https://github.com/littlesticks',
     icon: "mdi:github",
@@ -18,7 +18,7 @@ export const footerSocials = [
     name: 'Discord',
     url: 'https://littlesticks.dev/discord',
     icon: "ic:baseline-discord",
-  },
+  },    */
 ]
 
 export const footerLists = [

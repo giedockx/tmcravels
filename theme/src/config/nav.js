@@ -15,4 +15,8 @@ export const nav = [
 		title: 'Contact',
 		slug: '/company/contact',
 	},
+	{
+		title: 'Kalender',
+		slug: '/events'
+	}
 ];
