@@ -5,13 +5,15 @@ import type { Props as BaseHeadProps } from '../components/head/BaseHead.astro';
 import Logo from '../components/Logo.astro';
 import settings from '../config/settings';
 import { footerLists, footerSocials } from '../config/footer';
-
+/*import { useContext } from 'react';
+import { AuthContext } from '../stores/authContext';*/
 
 export interface Props {
 	seo?: BaseHeadProps;
 }
 
 import { nav } from '../config/nav.js';
+/*const {user, login} = useContext(AuthContext)*/
 
 const { seo } = Astro.props as Props;
 ---
@@ -21,9 +23,10 @@ const { seo } = Astro.props as Props;
 		<span slot="logo">
 			<Logo />
 		</span>
-		<Button slot="action-item" href="/theme/get-started">Get Started</Button>
+		<Button slot="action-item" onclick="netlifyIdentity.open()">Log in</Button> 
 	</Header>
 	<div id="page">
+		<button onclick="netlifyIdentity.open()">Login</button>
 		<slot />
 	</div>
 	<Footer
@@ -37,4 +40,15 @@ const { seo } = Astro.props as Props;
 	>
 		<Logo slot="logo" />
 	</Footer>
+	<script>
+		if (window.netlifyIdentity) {
+		  window.netlifyIdentity.on("init", user => {
+			if (!user) {
+			  window.netlifyIdentity.on("login", () => {
+				document.location.href = "/admin/";
+			  });
+			}
+		  });
+		}
+	  </script>
 </Layout>

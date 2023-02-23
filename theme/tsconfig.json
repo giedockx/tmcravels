@@ -5,6 +5,8 @@
 		"moduleResolution": "node",
 		"experimentalDecorators": true,
     "useDefineForClassFields": false,
+	"allowSyntheticDefaultImports": true,
+	"esModuleInterop": true,
 		// Add type definitions for our Vite runtime.
 		"types": ["vite/client"]
 	}
