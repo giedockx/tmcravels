@@ -17,6 +17,6 @@ export const nav = [
 	},
 	{
 		title: 'Kalender',
-		slug: '/events'
+		slug: '/company/events'
 	}
 ];
