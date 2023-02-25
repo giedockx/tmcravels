@@ -5,7 +5,6 @@ import type { Props as BaseHeadProps } from '../components/head/BaseHead.astro';
 import Logo from '../components/Logo.astro';
 import settings from '../config/settings';
 import { footerLists, footerSocials } from '../config/footer';
-import netlifyIdentity from 'netlify-identity-widget';
 export interface Props {
 	seo?: BaseHeadProps;
 }
@@ -36,5 +35,25 @@ const { seo } = Astro.props as Props;
 	>
 		<Logo slot="logo" />
 	</Footer>
+
+	<script>
+
+declare global {
+
+	interface window {
+		netlifyIdentity: any;
+	}
+}
+
+		if (window.netlifyIdentity) {
+		  window.netlifyIdentity.on("init", ((user:any) => {
+			if (!user) {
+			  window.netlifyIdentity.on("login", () => {
+				document.location.href = "/admin/";
+			  });
+			}
+		  }));
+		}
+	  </script>
 	
 </Layout>
