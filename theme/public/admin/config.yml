@@ -19,7 +19,8 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "mdx"}
+  
   - name: "Posts" # Used in routes, e.g., /admin/collections/blog
     label: "Posts" # Used in the UI
     folder: "theme/src/pages/company/events/articles" # The path to the folder where the documents are stored
@@ -31,4 +32,4 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "mdx"}
